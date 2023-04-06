@@ -172,138 +172,58 @@ padding-bottom: 2.25vh;
 text-align: center;
 }
 }
-</style>
-<div class="description-1657813783037JBeru3-element ">
-<h3>
-Assista até o final, essa apresentação sairá do ar no dia <span style="color:#ff0000"><b>08/04/2023</b></span>&nbsp;<span style="color:#ff0000"><span class="sm"></span></span>.
-</h3>
-</div>
-</div>
-<style>
-.video-1657813533086ArMz3l {
-border: 1px solid #4adede;
-box-shadow: 0 0 6px 3px rgba(74, 222, 222, 0.33);
-border-radius: 4px;
+<script type="text/javascript">
+document.addEventListener("DOMContentLoaded", function() {
+/* ALTERE O VALOR 10 PARA OS SEGUNDOS EM QUE AS SEÇÕES VÃO APARECER */
+var SECONDS_TO_DISPLAY = 1260;
+var CLASS_TO_DISPLAY = ".esconder";
+
+var attempts = 0;
+var elsHiddenList = [];
+var elsDisplayed = false;
+var elsHidden = document.querySelectorAll(CLASS_TO_DISPLAY);
+var alreadyDisplayedKey =`alreadyElsDisplayed${SECONDS_TO_DISPLAY}`
+var alreadyElsDisplayed = localStorage.getItem(alreadyDisplayedKey);
+
+setTimeout(function () { elsHiddenList = Array.prototype.slice.call(elsHidden); }, 0);
+
+var showHiddenElements = function () {
+elsDisplayed = true;
+elsHiddenList.forEach((e) => e.style.display = "block");
+localStorage.setItem(alreadyDisplayedKey, true)
 }
-video.smartplayer-video {
-border-radius: 0px !important;
+
+var startWatchVideoProgress = function () {
+if (typeof smartplayer === 'undefined' || !(smartplayer.instances && smartplayer.instances.length)) {
+if (attempts >= 10) return;
+attempts += 1;
+return setTimeout(function () { startWatchVideoProgress() }, 1000);
 }
-</style>
-<div class="video-1657813533086ArMz3l">
-<script src="https://fast.wistia.com/embed/medias/dk8sk36buk.jsonp" async></script><script src="https://fast.wistia.com/assets/external/E-v1.js" async></script><div class="wistia_responsive_padding" style="padding:56.25% 0 0 0;position:relative;"><div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;"><div class="wistia_embed wistia_async_dk8sk36buk videoFoam=true" style="height:100%;position:relative;width:100%"><div class="wistia_swatch" style="height:100%;left:0;opacity:0;overflow:hidden;position:absolute;top:0;transition:opacity 200ms;width:100%;"><img src="https://fast.wistia.com/embed/medias/dk8sk36buk/swatch" style="filter:blur(5px);height:100%;object-fit:contain;width:100%;" alt="" aria-hidden="true" onload="this.parentNode.style.opacity=1;" /></div></div></div></div><div class="description-16578141835486qxbNr">
-<style>
-.description-16578141835486qxbNr-element h3 {
-font-size: 1.32vw;
-text-align: center;
-padding-top: 3vh;
-padding-bottom: 2vh;
-color: #000000;
-line-height: 1.1;
-font-weight: 400;
-false
+
+smartplayer.instances[0].on('timeupdate', () => {
+if (elsDisplayed || smartplayer.instances[0].smartAutoPlay) return;
+if (smartplayer.instances[0].video.currentTime < SECONDS_TO_DISPLAY) return;
+showHiddenElements();
+})
 }
-@media (max-width: 1200px) {
-.description-16578141835486qxbNr-element h3 {
-font-size: 1.80vw;
-padding-top: 2.25vh;
-padding-bottom: 1.5vh;
+
+if (alreadyElsDisplayed === 'true') {
+setTimeout(function () { showHiddenElements(); }, 100);
+} else {
+startWatchVideoProgress()
 }
-}
-@media (max-width: 640px) {
-.description-16578141835486qxbNr-element h3 {
-font-size: 4.00vw;
-padding-top: 2.25vh;
-padding-bottom: 1.5vh;
-text-align: center;
-}
-}
-</style>
-<div class="description-16578141835486qxbNr-element ">
-<h3>
-<span class="xl"></span>611 pessoas assistindo agora...
-</h3>
-</div>
-</div>
-<div class="button-1657813946622FRFjIW BCYkuB5371459">
-<style>
-a.button-1657813946622FRFjIW-element {
-background-color: #ffa500 ;
-border-radius: 4px;
-border: none;
-color: #ffffff;
-padding: 16px 32px 16px 32px;
-font-weight: 600;
-display: block;
-width: fit-content;
-text-align: center;
-margin: 4vh auto 2vh auto;
-font-size: 1.49vw;
-box-sizing: border-box;
-max-width: 100%;
-}
-@media (max-width: 1200px) {
-a.button-1657813946622FRFjIW-element {
-font-size: 1.69vw;
-margin: 2.64vh auto 1.5vh auto
-}
-}
-@media (max-width: 640px) {
-a.button-1657813946622FRFjIW-element {
-font-size: 3.94vw;
-margin: 2vh auto 1vh auto
-}
-}
-</style>
-<a href="https://pay.kiwify.com.br/extJBb8">
-SIM! QUERO A FÓRMULA DO AMOR VERDADEIRO AGORA!
-</a>
-</div>
-<div class="hyperlink-1657814165233XBbbd5 BCYkuB5371459">
-<style>
-.hyperlink-1657814165233XBbbd5-element {
-font-size: 1.20vw;
-font-weight: 500;
-color: #0d6efd !important;
-text-align: center;
-display: block;
-margin: 2vh auto 2vh auto;
-padding: 0 !important;
-}
-@media (max-width: 1200px) {
-.hyperlink-1657814165233XBbbd5-element {
-font-size: 2.10vw;
-}
-}
-@media (max-width: 640px) {
-.hyperlink-1657814165233XBbbd5-element {
-font-size: 3.00vw;
-}
-}
-</style>
-<a class="hyperlink-1657814165233XBbbd5-element" href="https://pay.kiwify.com.br/extJBb8" target="_blank" rel="nofollow">
-Adicionar ao carrinho
-</a>
-</div>
-</div>
-</div>
-<div class="division-1657814269107__wrapper">
-<style>
-#division-1657814269107 {
-position: relative;
-padding: 3vh 20vw 3vh 20vw;
-background-color: #ffffff;
-}
-@media (max-width:1200px) {
-#division-1657814269107 {
-padding: 2.25vh 15vw 2.25vh 15vw;
-}
-}
-@media (max-width:600px) {
-#division-1657814269107 {
-padding: 1.5vh 1.5vw 1.5vh 1.5vw;
-}
-}
-</style>
+});
+</script>		</div>
+				</div>
+				<div class="elementor-element elementor-element-516cc96 elementor-align-center esconder elementor-widget elementor-widget-button" data-id="516cc96" data-element_type="widget" data-widget_type="button.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-button-wrapper">
+			<a href="https://pay.kiwify.com.br/extJBb8" class="elementor-button-link elementor-button elementor-size-sm" role="button">
+<span class="elementor-button-content-wrapper">
+<span class="elementor-button-text">SIM! QUERO A FÓRMULA DO AMOR VERDADEIRO AGORA!</span>
+		</span>
+					</a>
+		</div>
 <div id="division-1657814269107" class="woNRSY5359325">
 <style>.px-1{padding-left:4px;padding-right:4px}.pt-0.5{padding-top:2px}.mt-4{margin-top:16px}@media (min-width:640px){.sm\:text-sm{font-size:14px;line-height:20px}}.mt-2{margin-top:8px}.mb-2{margin-bottom:8px}.flex{display:flex}.w-full{width:100%}.space-x-1>:not([hidden])~:not([hidden]){margin-left:.25rem}.items-center{align-items:center}.font-\[Helvetica\]{font-family:Helvetica,Arial,sans-serif}.cursor-pointer{cursor:pointer}.rounded-full{border-radius:99999px}.h-12{height:48px}.w-12{width:48px}.flex-col{flex-direction:column}.py-1{padding-top:4px;padding-bottom:4px}.px-3{padding-left:12px;padding-right:12px}.pl-0\.5,.px-0\.5{padding-left:2px}.rounded-\[18px\]{border-radius:18px}.bg-stone-100{background-color:#f5f5f4}.px-0\.5{padding-right:2px}.font-semibold{font-weight:600}.text-\[\#365899\]{color:#365899}.text-\[13px\]{font-size:13px}.leading-4{line-height:16px}.hover\:underline:hover{text-decoration-line:underline}.text-sm{font-size:14px}.relative{position:relative}.justify-between{justify-content:space-between}.grow{flex-grow:1}.text-xs{font-size:12px}.text-\[\#90949c\]{color:#90949c}.ml-px{margin-left:1px}.gap-1{gap:4px}.w-fit{width:fit-content}.hidden{display:none}.-mt-1{margin-top:-4px}.-mt-2{margin-top:-8px}.mr-2{margin-right:8px}.h-4,.h-5{height:16px}.drop-shadow{--tw-drop-shadow:drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1)) drop-shadow(0 1px 1px rgba(0, 0, 0, 0.06));filter:var(--tw-drop-shadow)}.bg-slate-50{background-color:#f8fafc}.py-0\.5{padding-top:2px;padding-bottom:2px}.pr-1{padding-right:4px}.block{display:block}.w-4{width:16px}.z-10{z-index:10}.-ml-1{margin-left:-4px}.ml-4{margin-left:16px}.gap-x-0\.5{column-gap:2px}.mr-0\.5{margin-right:2px;margin-left:2px}.border-l{border-left-width:1px}.border-slate-300{border-color:#cbd5e1}.border-dotted{border-style:dotted}.ml-5{margin-left:20px}.h-8{height:32px}.w-8{width:32px}.h-10{height:40px}.w-10{width:40px}@media (min-width:640px){.sm\:w-16{width:64px}.sm\:ml-12{margin-left:48px}}.pl-2{padding-left:8px}</style>
 <div class="fbComments-165781427323944vBC3" style="margin-left:auto;margin-right:auto">
