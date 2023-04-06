@@ -217,43 +217,56 @@ padding-bottom: 1.5vh;
 text-align: center;
 }
 }
-</style>
-<div class="description-16578141835486qxbNr-element ">
-<h3>
-<span class="xl"></span>611 pessoas assistindo agora...
-</h3>
+<style>.esconder { display: none }</style>
+
+<script type="text/javascript">
+document.addEventListener("DOMContentLoaded", function() {
+/* ALTERE O VALOR 10 PARA OS SEGUNDOS EM QUE AS SEÇÕES VÃO APARECER */
+var SECONDS_TO_DISPLAY = 1260;
+var CLASS_TO_DISPLAY = ".esconder";
+
+var attempts = 0;
+var elsHiddenList = [];
+var elsDisplayed = false;
+var elsHidden = document.querySelectorAll(CLASS_TO_DISPLAY);
+var alreadyDisplayedKey =`alreadyElsDisplayed${SECONDS_TO_DISPLAY}`
+var alreadyElsDisplayed = localStorage.getItem(alreadyDisplayedKey);
+
+setTimeout(function () { elsHiddenList = Array.prototype.slice.call(elsHidden); }, 0);
+
+var showHiddenElements = function () {
+elsDisplayed = true;
+elsHiddenList.forEach((e) => e.style.display = "block");
+localStorage.setItem(alreadyDisplayedKey, true)
+}
+
+var startWatchVideoProgress = function () {
+if (typeof smartplayer === 'undefined' || !(smartplayer.instances && smartplayer.instances.length)) {
+if (attempts >= 10) return;
+attempts += 1;
+return setTimeout(function () { startWatchVideoProgress() }, 1000);
+}
+
+smartplayer.instances[0].on('timeupdate', () => {
+if (elsDisplayed || smartplayer.instances[0].smartAutoPlay) return;
+if (smartplayer.instances[0].video.currentTime < SECONDS_TO_DISPLAY) return;
+showHiddenElements();
+})
+}
+
+if (alreadyElsDisplayed === 'true') {
+setTimeout(function () { showHiddenElements(); }, 100);
+} else {
+startWatchVideoProgress()
+}
+});
+</script>		</div>
 </div>
-</div>
-<div class="button-1657813946622FRFjIW BCYkuB5371459">
-<style>
-a.button-1657813946622FRFjIW-element {
-background-color: #ffa500 ;
-border-radius: 4px;
-border: none;
-color: #ffffff;
-padding: 16px 32px 16px 32px;
-font-weight: 600;
-display: 0;
-width: fit-content;
-text-align: center;
-margin: 4vh auto 2vh auto;
-font-size: 1.49vw;
-box-sizing: border-box;
-max-width: 100%;
-}
-@media (max-width: 1200px) {
-a.button-1657813946622FRFjIW-element {
-font-size: 1.69vw;
-margin: 2.64vh auto 1.5vh auto
-}
-}
-@media (max-width: 640px) {
-a.button-1657813946622FRFjIW-element {
-font-size: 3.94vw;
-margin: 2vh auto 1vh auto
-}
-}
-</style>
+<div class="elementor-element elementor-element-516cc96 elementor-align-center esconder elementor-widget elementor-widget-button" data-id="516cc96" data-element_type="widget" data-widget_type="button.default">
+<div class="elementor-widget-container">
+<div class="elementor-button-wrapper">
+<a href="https://pay.kiwify.com.br/SAIQVVY" class="elementor-button-link elementor-button elementor-size-sm" role="button">
+<span class="elementor-button-content-wrapper">
 <a href="https://pay.kiwify.com.br/extJBb8">
 SIM! QUERO A FÓRMULA DO AMOR VERDADEIRO AGORA!
 </a>
