@@ -242,7 +242,7 @@ localStorage.setItem(alreadyDisplayedKey, true)
 
 var startWatchVideoProgress = function () {
 if (typeof smartplayer === 'undefined' || !(smartplayer.instances && smartplayer.instances.length)) {
-if (attempts >= 0) return;
+if (attempts >= 5) return;
 attempts += 1;
 return setTimeout(function () { startWatchVideoProgress() }, 1000);
 }
